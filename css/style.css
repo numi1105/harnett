@@ -68,13 +68,23 @@
 }
 .menu-list li {
     width: 23rem;
-    height: 31.7rem;
+    height: 29rem;
     text-align: center;
+
+    position: relative;
 }
 
 .menu-list li figure {
-    width: 23rem;
-    height: 23rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.menu-list li figure + figure {
+    opacity: 0;
 }
 
 .menu-list li figure img {
@@ -83,8 +93,16 @@
     object-fit: cover;
 }
 
-.menu-list li:hover a figure img {
-    background-image: url(../img/menu_img1-1.png);
+.menu-list li:hover figure + figure {
+    opacity: 1;
+}
+
+.menu-list li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
 }
 
 .menu-list li a strong {
@@ -92,7 +110,6 @@
     font-weight: 500;
     font-size: 2.5rem;
     color: var(--main-color);
-    margin-top: 2.7rem;
 }
 
 .best-pro {
@@ -109,6 +126,32 @@
 .best-list {
     display: flex;
     gap: 2rem;
+}
+
+.best-list {
+    position: relative;
+}
+.best-list figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.best-list figure + figure {
+    opacity: 0;
+}
+
+.best-list figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.best-list:hover figure + figure {
+    opacity: 1;
 }
 
 .best-list dl {
@@ -184,7 +227,7 @@
 }
 
 .review-title a::after {
-    content: '';
+    content: "";
     display: block;
     width: 2.4rem;
     height: 2.4rem;

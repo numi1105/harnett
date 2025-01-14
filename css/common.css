@@ -56,7 +56,7 @@ body {
 .inner {
     width: 168rem;
     margin: 0 auto;
-    background-color: #ff5;
+    /* background-color: #ff5; */
 }
 
 .sec-title {
