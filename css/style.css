@@ -184,7 +184,7 @@
 }
 
 .review-title a::after {
-    content: "";
+    content: '';
     display: block;
     width: 2.4rem;
     height: 2.4rem;
@@ -235,7 +235,7 @@
 }
 
 .brand-str {
-    width: 58.8em;
+    width: 58.8rem;
 
     border: 1px solid #000;
 }
