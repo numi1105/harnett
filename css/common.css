@@ -1,0 +1,106 @@
+@charset 'utf-8';
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+    font-size: 100%;
+    font-size: 62.5%;
+    --main-color: #0b2815;
+    --text-color: #757575;
+    --line-color: rgba(117, 117, 117, 0.5);
+    --bg-color: rgba(117, 117, 117, 0.1);
+    --rds-1: 2rem;
+    --rds-3: 3rem;
+    --rds-5: 5rem;
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+hr,
+.hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer; /* cup : 커서 손가락 모양으로 바꿈 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font: 2rem/1.5 pretendard, sans-serif;
+    color: var(--text-color);
+    word-break: keep-all; /* wbka:어절 단위 줄바꿈 */
+}
+
+.inner {
+    width: 168rem;
+    margin: 0 auto;
+    background-color: #ff5;
+}
+
+.sec-title {
+    font-weight: 700;
+    font-size: 4.5rem;
+    color: var(--main-color);
+}
+
+.product-title p {
+    margin-top: 2rem;
+}
+
+.btn-more {
+    font-size: 2rem;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px solid var(--line-color);
+    border-radius: var(--rds-3);
+    padding: 1rem 2.6rem;
+    margin-top: 5.9rem;
+    display: block;
+    gap: 2.1rem;
+
+    position: relative;
+}
+
+.btn-more:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn-more::after {
+    content: "";
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../img/jam_plus.png) no-repeat 50%;
+
+    position: absolute;
+    top: 1.2rem;
+    right: 2.5rem;
+}
+
+.btn-more:hover::after {
+    background: url(../img/jam_plus-1.png);
+}
