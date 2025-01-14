@@ -85,6 +85,8 @@
 
 .menu-list li figure + figure {
     opacity: 0;
+
+    transition: 2s;
 }
 
 .menu-list li figure img {
@@ -128,10 +130,16 @@
     gap: 2rem;
 }
 
-.best-list {
+.best-list a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 40.5rem;
+    aspect-ratio: 1/1.23;
+
     position: relative;
 }
-.best-list figure {
+.best-list a figure {
     position: absolute;
     top: 0;
     left: 0;
@@ -140,17 +148,18 @@
     aspect-ratio: 1;
 }
 
-.best-list figure + figure {
+.best-list a figure + figure {
     opacity: 0;
+    transition: 2s;
 }
 
-.best-list figure img {
+.best-list a figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.best-list:hover figure + figure {
+.best-list a:hover figure + figure {
     opacity: 1;
 }
 
@@ -176,6 +185,39 @@
 .new-list {
     display: flex;
     gap: 2rem;
+}
+
+.new-list a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 40.5rem;
+    aspect-ratio: 1/1.23;
+
+    position: relative;
+}
+.new-list a figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.new-list a figure + figure {
+    opacity: 0;
+    transition: 2s;
+}
+
+.new-list a figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.new-list a:hover figure + figure {
+    opacity: 1;
 }
 
 .new-pro .product-wrap {
@@ -224,6 +266,8 @@
 
     text-indent: -999px;
     overflow: hidden;
+
+    transition: 1s;
 }
 
 .review-title a::after {
@@ -280,7 +324,7 @@
 .brand-str {
     width: 58.8rem;
 
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 .brand-str h2 {
     font-weight: 700;

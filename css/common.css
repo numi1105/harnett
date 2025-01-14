@@ -82,6 +82,8 @@ body {
     gap: 2.1rem;
 
     position: relative;
+
+    transition: 1s;
 }
 
 .btn-more:hover {
@@ -99,6 +101,8 @@ body {
     position: absolute;
     top: 1.2rem;
     right: 2.5rem;
+
+    transition: 1s;
 }
 
 .btn-more:hover::after {
