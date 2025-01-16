@@ -141,7 +141,9 @@
     display: flex;
     border: solid red;
     width: 126rem;
-    height: 49.9rem;
+
+    /* 세로 크기를 고정하면 안 좋아요. */
+    /* height: 49.9rem; */
 
     position: relative;
 }
@@ -150,7 +152,9 @@
     display: flex;
     width: 100%;
     height: 100%;
-    gap: 2rem;
+
+    /* 이게 망치게된 주된 이유 */
+    /* gap: 2rem; */
 }
 
 .swiper-slide {
@@ -167,7 +171,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 40.5rem;
+
+    /* 스와이퍼는 가로 크기를 자동으로 계산하니까 고정시키지 말 것 */
+    /* width: 40.5rem; */
     aspect-ratio: 1/1.23;
 
     position: relative;
@@ -178,7 +184,7 @@
     top: 0;
     left: 0;
 
-    width: 40.5rem;
+    /* width: 40.5rem; */
     aspect-ratio: 1;
 }
 
@@ -269,7 +275,7 @@
 }
 
 .review-title a::after {
-    content: "";
+    content: '';
     display: block;
     width: 2.4rem;
     height: 2.4rem;

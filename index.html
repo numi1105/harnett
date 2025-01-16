@@ -503,39 +503,40 @@
         </aside>
 
         <script>
-            const visualSlider = new Swiper(".visual-slider", {
+            const visualSlider = new Swiper('.visual-slider', {
                 // Optional parameters
                 loop: true,
-                autoplay: {
-                    delay: 3000,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                // },
                 speed: 500,
 
                 // Navigation arrows
                 navigation: {
-                    nextEl: ".visual-slider .btn-next",
-                    prevEl: ".visual-slider .btn-prev",
+                    nextEl: '.visual-slider .btn-next',
+                    prevEl: '.visual-slider .btn-prev',
                 },
 
                 pagination: {
-                    el: ".swiper-pagination",
-                    type: "bullets",
+                    el: '.swiper-pagination',
+                    type: 'bullets',
                 },
             });
 
-            const productList = new Swiper(".product-list", {
+            const productList = new Swiper('.product-list', {
                 // Optional parameters
                 loop: true,
-                autoplay: {
-                    delay: 3000,
-                },
+                //autoplay: {
+                //   delay: 3000,
+                //},
                 speed: 500,
                 slidesPerView: 3,
+                spaceBetween: 20,
 
                 // Navigation arrows
                 navigation: {
-                    nextEl: ".best-pro  .best-next",
-                    nextE1: ".new-pro  .new-next",
+                    nextEl: '.best-pro  .best-next',
+                    nextE1: '.new-pro  .new-next',
                 },
             });
         </script>
