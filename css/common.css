@@ -10,6 +10,7 @@
     --bg-color: rgba(117, 117, 117, 0.1);
     --rds-1: 2rem;
     --rds-3: 3rem;
+    --rds-4: 4rem;
     --rds-5: 5rem;
 }
 
@@ -56,7 +57,7 @@ body {
 .inner {
     width: 168rem;
     margin: 0 auto;
-    /* background-color: #ff5; */
+    background-color: #ff5;
 }
 
 .sec-title {
