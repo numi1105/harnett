@@ -65,13 +65,9 @@ body {
     color: var(--main-color);
 }
 
-.product-title p {
-    margin-top: 2rem;
-}
-
 .btn-more {
     font-size: 2rem;
-    display: inline-block;
+    display: block;
     width: 150px;
     height: 50px;
     border: 1px solid var(--line-color);
@@ -83,7 +79,7 @@ body {
 
     position: relative;
 
-    transition: 1s;
+    transition: 4s;
 }
 
 .btn-more:hover {
@@ -93,7 +89,7 @@ body {
 
 .btn-more::after {
     content: "";
-    display: inline-block;
+    display: block;
     width: 2.4rem;
     height: 2.4rem;
     background: url(../img/jam_plus.png) no-repeat 50%;
@@ -101,8 +97,6 @@ body {
     position: absolute;
     top: 1.2rem;
     right: 2.5rem;
-
-    transition: 1s;
 }
 
 .btn-more:hover::after {

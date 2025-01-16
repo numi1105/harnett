@@ -27,6 +27,11 @@
     font-size: 2.3rem;
     color: var(--main-color);
 }
+
+.gnb li a:hover {
+    border-bottom: 2px solid var(--main-color);
+}
+
 .util-manu {
     display: flex;
     gap: 3.7rem;
@@ -115,22 +120,50 @@
 }
 
 .best-pro {
-    margin-top: 20rem;
+    position: relative;
 }
+
 .product-wrap {
     display: flex;
+    gap: 6.1rem;
+    margin-top: 20rem;
 }
 
-.best-pro .product-wrap {
-    gap: 8.5rem;
+.product-title {
+    width: 36.5rem;
+    height: 22.7rem;
+}
+.product-title p {
+    margin-top: 2rem;
 }
 
-.best-list {
+.product-list {
     display: flex;
+    border: solid red;
+    width: 126rem;
+    height: 49.9rem;
+
+    position: relative;
+}
+
+.swiper-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
     gap: 2rem;
 }
 
-.best-list a {
+.swiper-slide {
+    width: 100%;
+}
+
+.best-next {
+    position: absolute;
+    top: 17.7rem;
+    right: 6.1rem;
+}
+
+.product-list a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -139,104 +172,69 @@
 
     position: relative;
 }
-.best-list a figure {
+
+.product-list a figure {
     position: absolute;
     top: 0;
     left: 0;
 
-    width: 100%;
+    width: 40.5rem;
     aspect-ratio: 1;
 }
 
-.best-list a figure + figure {
+.product-list a figure + figure {
     opacity: 0;
     transition: 2s;
 }
 
-.best-list a figure img {
+.product-list a figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.best-list a:hover figure + figure {
+.product-list a:hover figure + figure {
     opacity: 1;
 }
 
-.best-list dl {
+.product-list dl {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: 2rem;
     padding: 0 1rem;
     gap: 0.4rem;
 }
-
-.best-list dl dt {
+.product-list dl dt {
     font-weight: 600;
     font-size: 2.3rem;
     color: var(--main-color);
 }
 
-.best-list dl dd {
+.product-list dl dd {
     font-size: 2.3rem;
     color: #000;
 }
 
 .new-pro {
     margin-top: 20rem;
+
+    position: relative;
 }
 .new-list {
     display: flex;
     gap: 2rem;
 }
 
-.new-list a {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 40.5rem;
-    aspect-ratio: 1/1.23;
-
-    position: relative;
-}
-.new-list a figure {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    aspect-ratio: 1;
-}
-
-.new-list a figure + figure {
-    opacity: 0;
-    transition: 2s;
-}
-
-.new-list a figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.new-list a:hover figure + figure {
-    opacity: 1;
-}
-
 .new-pro .product-wrap {
     flex-direction: row-reverse;
     gap: 9.5rem;
 }
-.new-list dl {
-    padding: 0 1rem;
-    gap: 0.4rem;
-}
-.new-list dl dt {
-    font-weight: 600;
-    font-size: 2.3rem;
-    color: var(--main-color);
-}
 
-.new-list dl dd {
-    font-size: 2.3rem;
-    color: #000;
+.new-next {
+    position: absolute;
+    top: 17.7rem;
+    left: 6.1rem;
 }
 
 .review {
@@ -267,7 +265,7 @@
     text-indent: -999px;
     overflow: hidden;
 
-    transition: 1s;
+    transition: 4s;
 }
 
 .review-title a::after {
