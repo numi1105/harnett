@@ -132,13 +132,13 @@
             <!-- s:best-pro -->
             <section class="best-pro">
                 <div class="inner">
-                    <div class="product-wrap">
+                    <div class="best-wrap">
                         <div class="product-title">
                             <h2 class="sec-title" data-aos="fade-right" data-aos-delay="500">BEST PRODUCT</h2>
                             <p data-aos="fade-right" data-aos-delay="700">공간을 새롭게 스타일링 해 보세요</p>
                             <a href="#" class="btn-more" data-aos="fade-right" data-aos-delay="900">더보기</a>
                         </div>
-                        <div class="swiper product-list">
+                        <div class="swiper best-list">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a href="#">
@@ -247,13 +247,13 @@
             <!-- s:new-pro -->
             <section class="new-pro">
                 <div class="inner">
-                    <div class="product-wrap">
+                    <div class="new-wrap">
                         <div class="product-title">
                             <h2 class="sec-title" data-aos="fade-right" data-aos-delay="500">NEW PRODUCT</h2>
                             <p data-aos="fade-right" data-aos-delay="700">새로 나온 상품을 지금 만나보세요</p>
                             <a href="#" class="btn-more" data-aos="fade-right" data-aos-delay="700">더보기</a>
                         </div>
-                        <div class="swiper product-list">
+                        <div class="swiper new-list">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a href="#">
@@ -523,7 +523,9 @@
                 },
             });
 
-            const productList = new Swiper('.product-list', {
+
+            const bestList = new Swiper(".best-list", {
+
                 // Optional parameters
                 loop: true,
                 //autoplay: {
@@ -535,8 +537,25 @@
 
                 // Navigation arrows
                 navigation: {
-                    nextEl: '.best-pro  .best-next',
-                    nextE1: '.new-pro  .new-next',
+
+
+                    nextEl: ".best-pro  .best-next",
+                },
+            });
+
+            const newList = new Swiper(".new-list", {
+                // Optional parameters
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                },
+                speed: 500,
+                slidesPerView: 3,
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: ".new-pro  .new-next",
+
                 },
             });
         </script>
