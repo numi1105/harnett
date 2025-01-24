@@ -1,20 +1,20 @@
-const visualSlider = new Swiper('.visual-slider', {
+const visualSlider = new Swiper(".visual-slider", {
     // Optional parameters
     loop: true,
-    // autoplay: {
-    //   delay: 3000,
-    // },
+    autoplay: {
+        delay: 3000,
+    },
     speed: 1000,
 
     // Navigation arrows
     navigation: {
-        nextEl: '.visual-slider .btn-next',
-        prevEl: '.visual-slider .btn-prev',
+        nextEl: ".visual-slider .btn-next",
+        prevEl: ".visual-slider .btn-prev",
     },
 
     pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
+        el: ".visual-slider .swiper-pagination",
+        type: "bullets",
     },
 
     breakpoints: {
@@ -24,7 +24,7 @@ const visualSlider = new Swiper('.visual-slider', {
     },
 });
 
-const bestList = new Swiper('.best-list', {
+const bestList = new Swiper(".best-list", {
     // Optional parameters
     loop: true,
     //autoplay: {
@@ -36,11 +36,11 @@ const bestList = new Swiper('.best-list', {
 
     // Navigation arrows
     navigation: {
-        nextEl: '.best-pro  .best-next',
+        nextEl: ".best-pro  .best-next",
     },
 });
 
-const newList = new Swiper('.new-list', {
+const newList = new Swiper(".new-list", {
     // Optional parameters
     loop: true,
     autoplay: {
@@ -52,7 +52,7 @@ const newList = new Swiper('.new-list', {
 
     // Navigation arrows
     navigation: {
-        nextEl: '.new-pro  .new-next',
+        nextEl: ".new-pro  .new-next",
     },
 });
 function initSwipers() {
@@ -67,10 +67,10 @@ function initSwipers() {
     }
 }
 
-window.addEventListener('resize', initSwipers);
-window.addEventListener('load', initSwipers);
+window.addEventListener("resize", initSwipers);
+window.addEventListener("load", initSwipers);
 
-const reviewList = new Swiper('.review-list', {
+const reviewList = new Swiper(".review-list", {
     // Optional parameters
     loop: true,
     autoplay: {
@@ -83,8 +83,8 @@ const reviewList = new Swiper('.review-list', {
 
     // Navigation arrows
     navigation: {
-        nextEl: '.review .btn-next',
-        prevEl: '.review .btn-prev',
+        nextEl: ".review .btn-next",
+        prevEl: ".review .btn-prev",
     },
 
     breakpoints: {
@@ -96,4 +96,4 @@ const reviewList = new Swiper('.review-list', {
     },
 });
 
-// AOS.init();
+//AOS.init();
