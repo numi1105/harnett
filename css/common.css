@@ -8,7 +8,7 @@
     --text-color: #757575;
     --line-color: rgba(117, 117, 117, 0.5);
     --bg-color: rgba(117, 117, 117, 0.1);
-    --rds-1: 2rem;
+    --rds-2: 2rem;
     --rds-3: 3rem;
     --rds-4: 4rem;
     --rds-5: 5rem;
@@ -57,7 +57,7 @@ body {
 .inner {
     width: 168rem;
     margin: 0 auto;
-    background-color: #ff5;
+    /* background-color: #ff5; */
 }
 
 .sec-title {
@@ -69,8 +69,8 @@ body {
 .btn-more {
     font-size: 2rem;
     display: block;
-    width: 150px;
-    height: 50px;
+    width: 15rem;
+    height: 5rem;
     border: 1px solid var(--line-color);
     border-radius: var(--rds-3);
     padding: 1rem 2.6rem;

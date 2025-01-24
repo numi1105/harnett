@@ -7,6 +7,10 @@
     width: 100%;
     z-index: 10;
     border-bottom: 1px solid var(--line-color);
+
+    position: fixed;
+
+    background: #fff;
 }
 
 #header nav {
@@ -16,8 +20,13 @@
     align-items: center;
 }
 
+.logo a {
+    width: 14.8rem;
+    /* height: 2.4rem; */
+}
 .gnb {
     display: flex;
+
     gap: 50px;
     /* background: red; */
 }
@@ -26,10 +35,13 @@
     display: block;
     font-size: 2.3rem;
     color: var(--main-color);
+
+    transition: 0.4s;
 }
 
 .gnb li a:hover {
-    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
 }
 
 .util-manu {
@@ -40,11 +52,21 @@
 
 .visual {
     /* background: #5f5; */
-    max-width: 192rem;
-    height: 96rem;
-    margin: 8rem auto;
-
+    width: 192rem;
+    width: 100%;
     position: relative;
+}
+
+.visual figure {
+    /* border: 1px solid #000; */
+    width: 100%;
+    aspect-ratio: 1/0.5;
+}
+
+.visual figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .visual .btn {
@@ -53,7 +75,7 @@
     /* width: 3.3rem; */
     /* height: 6rem; */
 
-    z-index: 20;
+    z-index: 1;
 
     transform: translateY(-50%);
     background: transparent;
@@ -67,13 +89,20 @@
     right: 12rem;
 }
 
+.pro-menu {
+    margin-top: 10rem;
+}
+
 .menu-list {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 .menu-list li {
     width: 23rem;
-    height: 29rem;
+    width: 13.6905%;
+    /* height: 29rem; */
+    aspect-ratio: 1/1.32;
     text-align: center;
 
     position: relative;
@@ -86,22 +115,28 @@
 
     width: 100%;
     aspect-ratio: 1;
+    border: 1px solid var(--line-color);
+    border-radius: 50%;
 }
 
 .menu-list li figure + figure {
     opacity: 0;
+}
 
-    transition: 2s;
+.menu-list li:hover figure + figure {
+    opacity: 1;
+    overflow: hidden;
 }
 
 .menu-list li figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.7s;
 }
 
-.menu-list li:hover figure + figure {
-    opacity: 1;
+.menu-list li:hover figure + figure img {
+    transform: scale(1.1);
 }
 
 .menu-list li a {
@@ -120,18 +155,19 @@
 }
 
 .best-pro {
+    margin-top: 20rem;
     position: relative;
 }
 
 .best-wrap {
     display: flex;
     gap: 6.1rem;
-    margin-top: 20rem;
 }
 
 .product-title {
-    width: 36.5rem;
-    height: 22.7rem;
+    /* width: 36.5rem; */
+    /* width: 21.7262%; */
+    /* height: 22.7rem; */
 }
 .product-title p {
     margin-top: 2rem;
@@ -141,6 +177,7 @@
     display: flex;
     /* border: solid red; */
     width: 126rem;
+
     position: relative;
 }
 
@@ -158,13 +195,18 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     aspect-ratio: 1/1.23;
 
     position: relative;
 }
 
 .best-list a figure {
+    border: 1px solid var(--line-color);
+    width: 40.5rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--rds-2);
+
     position: absolute;
     top: 0;
     left: 0;
@@ -172,18 +214,107 @@
     aspect-ratio: 1;
 }
 
-.best-list a figure + figure {
-    opacity: 0;
-    transition: 2s;
-}
-
 .best-list a figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    transition: 0.7s;
 }
 
+.best-list a figure + figure {
+    opacity: 0;
+}
 .best-list a:hover figure + figure {
+    opacity: 1;
+    overflow: hidden;
+}
+.best-list a:hover figure + figure img {
+    transform: scale(1.1);
+}
+
+.util-menu {
+    display: flex;
+}
+
+.util-menu button {
+    width: 5rem;
+    height: 5rem;
+    background: no-repeat 50%;
+    opacity: 0;
+
+    transition: 0.7s;
+}
+
+.util-menu .btn-pro-det {
+    background-image: url(../img/ico-pro-det.svg);
+    position: absolute;
+    bottom: 20rem;
+    left: 1.3rem;
+}
+.util-menu .btn-cart {
+    background-image: url(../img/ico-cart.svg);
+    position: absolute;
+    bottom: 15rem;
+    left: 1.3rem;
+}
+.util-menu .btn-like {
+    background-image: url(../img/ico-like.svg);
+    position: absolute;
+    bottom: 10rem;
+    left: 1.3rem;
+}
+
+.best-list a:hover .util-menu button {
+    opacity: 1;
+}
+
+.btn-pro-det i {
+    color: #ccc;
+    font-size: 1.5rem;
+
+    position: absolute;
+    bottom: 1.6rem;
+    left: 4.5rem;
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.btn-pro-det:hover i {
+    opacity: 1;
+}
+.btn-cart i {
+    color: #ccc;
+    font-size: 1.5rem;
+
+    position: absolute;
+    bottom: 1.4rem;
+    left: 4.5rem;
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.btn-cart:hover i {
+    opacity: 1;
+}
+.btn-like i {
+    color: #ccc;
+    font-size: 1.5rem;
+
+    position: absolute;
+    bottom: 1.2rem;
+    left: 4.5rem;
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.btn-like:hover i {
     opacity: 1;
 }
 
@@ -192,8 +323,7 @@
     bottom: 0;
     left: 0;
     margin-top: 2rem;
-    padding: 0 1rem;
-    gap: 0.4rem;
+    padding: 0 2rem;
 }
 .best-list dl dt {
     font-weight: 600;
@@ -223,7 +353,8 @@
     display: flex;
     /* border: solid red; */
     width: 126rem;
-    height: 49.9rem;
+    width: 75%;
+    /* height: 49.9rem; */
     gap: 2rem;
 
     position: relative;
@@ -239,24 +370,37 @@
 }
 
 .new-list a figure {
+    border: 1px solid var(--line-color);
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--rds-2);
     position: absolute;
     top: 0;
     left: 0;
 
     aspect-ratio: 1;
 }
-
-.new-list a figure + figure {
-    opacity: 0;
-    transition: 2s;
-}
 .new-list a figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    transition: 0.7s;
 }
 
+.new-list a figure + figure {
+    opacity: 0;
+}
 .new-list a:hover figure + figure {
+    opacity: 1;
+    overflow: hidden;
+}
+
+.new-list a:hover figure + figure img {
+    transform: scale(1.1);
+}
+
+.new-list a:hover .util-menu button {
     opacity: 1;
 }
 
@@ -265,8 +409,7 @@
     bottom: 0;
     left: 0;
     margin-top: 2rem;
-    padding: 0 1rem;
-    gap: 0.4rem;
+    padding: 0 2rem;
 }
 .new-list dl dt {
     font-weight: 600;
@@ -292,6 +435,17 @@
 
 .review .inner {
     position: relative;
+}
+
+.review-wrap {
+    width: 100%;
+    /* height: 62rem; */
+    aspect-ratio: 1/0.369;
+    /* border: 1px solid red; */
+}
+
+.review-wrap .swiper-pagination {
+    bottom: 0;
 }
 .review-title {
     gap: 58.7rem;
@@ -340,6 +494,7 @@
     margin-top: 2rem;
 }
 .review-list {
+    width: 100%;
     margin-top: 10rem;
     position: relative;
 }
@@ -367,7 +522,7 @@
 
 .review-list a figure {
     width: 35rem;
-    height: 35rem;
+    aspect-ratio: 1;
     /* border: solid #000; */
     border-radius: var(--rds-4);
     position: relative;
@@ -392,6 +547,8 @@
     left: 0;
 
     opacity: 0;
+
+    transition: 0.4s;
 }
 
 .review-con:hover {
@@ -408,6 +565,17 @@
     margin-top: 0.5rem;
 }
 
+.review .btn-prev {
+    position: absolute;
+    top: 36.6rem;
+    left: 6.1rem;
+}
+
+.review .btn-next {
+    position: absolute;
+    top: 36.6rem;
+    right: 6.1rem;
+}
 .video {
     margin-top: 20rem;
 }
@@ -420,6 +588,7 @@
 
 .video-con {
     width: 97.2rem;
+    width: 57.8571%;
     aspect-ratio: 1;
 }
 
@@ -432,6 +601,7 @@
 
 .brand-str {
     width: 58.8rem;
+    width: 35%;
 
     /* border: 1px solid #000; */
 }
@@ -494,6 +664,7 @@
     top: 7rem;
     right: 0;
 }
+
 .foot-list {
     display: flex;
     margin-left: 21.3rem;
@@ -528,4 +699,162 @@
     right: 2.5rem;
 
     position: fixed;
+    z-index: 1;
+}
+
+/*  .inner의 크기에 따른 분기점 */
+
+@media screen and (max-width: 1680px) {
+    .inner {
+        width: 720px;
+        width: 93.75%;
+
+        position: relative;
+    }
+}
+
+/* 태블릿 디자인 */
+@media screen and (max-width: 768px) {
+    #header nav {
+        height: 6rem;
+    }
+
+    #header nav::before {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        background: url(../img/ico-menu.png) no-repeat 0, 50%;
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .logo {
+        display: block;
+        width: 11rem;
+        aspect-ratio: 1/0.57;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .gnb {
+        display: none;
+    }
+
+    .util-manu li {
+        display: none;
+    }
+    .util-manu li:nth-child(3) {
+        display: block;
+        width: 3rem;
+        aspect-ratio: 1;
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .visual {
+        width: 76.8rem;
+        height: 94.6rem;
+        border: 1px solid #f00;
+    }
+
+    .pro-menu {
+        margin-top: 4.5rem;
+    }
+
+    .menu-list li a strong {
+        font-size: 1.8rem;
+        /* width: 11rem; */
+        /* height: 15.4rem; */
+        margin-top: 1.4rem;
+    }
+
+    .best-pro {
+        margin-top: 9rem;
+    }
+
+    .best-wrap {
+        flex-direction: column;
+    }
+
+    .product-title {
+        text-align: center;
+    }
+    .product-title h2 {
+        font-size: 4rem;
+    }
+
+    .product-title p {
+        font-size: 17px;
+        margin-top: 0.9rem;
+    }
+
+    .btn-more {
+        display: none;
+    }
+
+    .product-title::after {
+        content: "";
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid var(--line-color);
+        border-radius: 50%;
+        background: url(../img/jam_plus.png) no-repeat 50%;
+
+        position: absolute;
+        top: 5rem;
+        right: 0;
+    }
+    .best-next {
+        display: none;
+    }
+    .best-list {
+        width: 72rem;
+        height: 95rem;
+        padding: 3rem 0;
+        /* border: 1px solid red; */
+    }
+
+    .best-list dl dt {
+        font-size: 1.8rem;
+    }
+
+    .best-list dl dd {
+        font-size: 1.8rem;
+    }
+
+    .new-pro {
+        margin-top: 9rem;
+    }
+
+    .new-wrap {
+        flex-direction: column;
+    }
+
+    .new-next {
+        display: none;
+    }
+    .new-list {
+        width: 72rem;
+        height: 95rem;
+        padding: 3rem 0;
+        /* border: 1px solid red; */
+    }
+
+    .new-list dl dt {
+        font-size: 1.8rem;
+    }
+
+    .new-list dl dd {
+        font-size: 1.8rem;
+    }
 }
