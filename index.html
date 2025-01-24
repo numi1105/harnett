@@ -695,41 +695,61 @@
     </aside>
 
     <script>
-      const visualSlider = new Swiper('.visual-slider', {
-        // Optional parameters
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-        speed: 1000,
+            const visualSlider = new Swiper('.visual-slider', {
+              // Optional parameters
+              loop: true,
+              autoplay: {
+                delay: 3000,
+              },
+              speed: 1000,
 
-        // Navigation arrows
-        navigation: {
-          nextEl: '.visual-slider .btn-next',
-          prevEl: '.visual-slider .btn-prev',
-        },
+              // Navigation arrows
+              navigation: {
+                nextEl: '.visual-slider .btn-next',
+                prevEl: '.visual-slider .btn-prev',
+              },
 
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-        },
-      });
+              pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+              },
+            });
 
-      const productList = new Swiper('.product-list', {
-        // Optional parameters
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-        speed: 500,
-        slidesPerView: 3,
 
-        // Navigation arrows
-        navigation: {
-          nextEl: '.best-pro  .best-next',
-          nextE1: '.new-pro  .new-next',
-        },
-      });
+                  const bestList = new Swiper(".best-list", {
+
+                      // Optional parameters
+                      loop: true,
+                      //autoplay: {
+                      //   delay: 3000,
+                      //},
+                      speed: 500,
+                      slidesPerView: 3,
+                      spaceBetween: 20,
+
+                      // Navigation arrows
+                      navigation: {
+
+
+                          nextEl: ".best-pro  .best-next",
+                      },
+                  });
+
+                  const newList = new Swiper(".new-list", {
+                      // Optional parameters
+                      loop: true,
+                      autoplay: {
+                          delay: 3000,
+                      },
+                      speed: 500,
+                      slidesPerView: 3,
+
+                      // Navigation arrows
+                      navigation: {
+                          nextEl: ".new-pro  .new-next",
+      >>>>>>>>> Temporary merge branch 2
+                      },
+                  });
     </script>
 
     <script>
