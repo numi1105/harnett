@@ -695,65 +695,79 @@
     </aside>
 
     <script>
-            const visualSlider = new Swiper('.visual-slider', {
-              // Optional parameters
-              loop: true,
-              autoplay: {
-                delay: 3000,
-              },
-              speed: 1000,
+      const visualSlider = new Swiper('.visual-slider', {
+        // Optional parameters
+        loop: true,
+        // autoplay: {
+        //   delay: 3000,
+        // },
+        speed: 1000,
 
-              // Navigation arrows
-              navigation: {
-                nextEl: '.visual-slider .btn-next',
-                prevEl: '.visual-slider .btn-prev',
-              },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.visual-slider .btn-next',
+          prevEl: '.visual-slider .btn-prev',
+        },
 
-              pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-              },
-            });
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+      });
 
+      const bestList = new Swiper('.best-list', {
+        // Optional parameters
+        loop: true,
+        //autoplay: {
+        //   delay: 3000,
+        //},
+        speed: 500,
+        slidesPerView: 3,
+        spaceBetween: 20,
 
-                  const bestList = new Swiper(".best-list", {
+        // Navigation arrows
+        navigation: {
+          nextEl: '.best-pro  .best-next',
+        },
+      });
 
-                      // Optional parameters
-                      loop: true,
-                      //autoplay: {
-                      //   delay: 3000,
-                      //},
-                      speed: 500,
-                      slidesPerView: 3,
-                      spaceBetween: 20,
+      const newList = new Swiper('.new-list', {
+        // Optional parameters
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        speed: 500,
+        slidesPerView: 3,
+        spaceBetween: 20,
 
-                      // Navigation arrows
-                      navigation: {
+        // Navigation arrows
+        navigation: {
+          nextEl: '.new-pro  .new-next',
+        },
+      });
 
+      const reviewList = new Swiper('.review-list', {
+        // Optional parameters
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        speed: 500,
+        centeredSlides: true,
+        slidesPerView: 5,
+        spaceBetween: 20,
 
-                          nextEl: ".best-pro  .best-next",
-                      },
-                  });
-
-                  const newList = new Swiper(".new-list", {
-                      // Optional parameters
-                      loop: true,
-                      autoplay: {
-                          delay: 3000,
-                      },
-                      speed: 500,
-                      slidesPerView: 3,
-
-                      // Navigation arrows
-                      navigation: {
-                          nextEl: ".new-pro  .new-next",
-      >>>>>>>>> Temporary merge branch 2
-                      },
-                  });
+        // Navigation arrows
+        navigation: {
+          nextEl: '.review .btn-next',
+          prevEl: '.review .btn-prev',
+        },
+      });
     </script>
 
     <script>
-      AOS.init();
+      // AOS.init();
     </script>
   </body>
 </html>
