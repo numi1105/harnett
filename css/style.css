@@ -25,12 +25,24 @@
 }
 
 .logo a {
-    width: 14.8rem;
-    /* height: 2.4rem; */
+    display: block;
+    width: 14.2rem;
+    height: 8rem;
+    background: url(../img/logo.svg) no-repeat 0 0 / contain;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
 }
+/* .logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
 .gnb {
     display: flex;
-
     gap: 50px;
     /* background: red; */
 }
@@ -48,7 +60,7 @@
     border-bottom: 1px solid var(--main-color);
 }
 
-.util-manu {
+.util-menu {
     display: flex;
     gap: 3.7rem;
     /* background: red; */
@@ -89,6 +101,7 @@
 .visual .btn-prev {
     left: 12rem;
 }
+
 .visual .btn-next {
     right: 12rem;
 }
@@ -215,6 +228,8 @@
 
     width: 100%;
     aspect-ratio: 1;
+
+    overflow: hidden;
 }
 
 .best-list a figure img {
@@ -236,11 +251,11 @@
     transform: scale(1.1);
 }
 
-.util-menu {
+.util2-menu {
     display: flex;
 }
 
-.util-menu button {
+.util2-menu button {
     width: 5rem;
     height: 5rem;
     background: no-repeat 50%;
@@ -249,26 +264,26 @@
     transition: 0.7s;
 }
 
-.util-menu .btn-pro-det {
+.util2-menu .btn-pro-det {
     background-image: url(../img/ico-pro-det.svg);
     position: absolute;
     bottom: 20rem;
     left: 1.3rem;
 }
-.util-menu .btn-cart {
+.util2-menu .btn-cart {
     background-image: url(../img/ico-cart.svg);
     position: absolute;
     bottom: 15rem;
     left: 1.3rem;
 }
-.util-menu .btn-like {
+.util2-menu .btn-like {
     background-image: url(../img/ico-like.svg);
     position: absolute;
     bottom: 10rem;
     left: 1.3rem;
 }
 
-.best-list a:hover .util-menu button {
+.best-list a:hover .util2-menu button {
     opacity: 1;
 }
 
@@ -380,6 +395,7 @@
     left: 0;
 
     aspect-ratio: 1;
+    overflow: hidden;
 }
 .new-list a figure img {
     width: 100%;
@@ -401,7 +417,7 @@
     transform: scale(1.1);
 }
 
-.new-list a:hover .util-menu button {
+.new-list a:hover .util2-menu button {
     opacity: 1;
 }
 
@@ -631,13 +647,27 @@
 .foot-con1 {
     width: 47.4rem;
     width: 28.2143%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
+}
+
+.foot-con1 h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #000;
+    margin-top: 9rem;
+}
+.copyright {
+    font-size: 1.7rem;
+}
+
+.copyright p:nth-child(1) {
+    margin-top: 1rem;
 }
 
 .foot-con2 {
     width: 100.4rem;
     width: 59.7619%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
 .sns-list {
@@ -650,7 +680,7 @@
 .foot-list {
     display: flex;
     justify-content: space-between;
-    margin-top: 18.5rem;
+    margin-top: 11.6rem;
 }
 
 .foot-list dl dt {
@@ -666,7 +696,7 @@
 
 .foot-list dl dd {
     margin-top: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     line-height: 1.5rem;
 }
 
@@ -683,19 +713,11 @@
 
 /*  .inner의 크기에 따른 분기점 */
 
-@media screen and (max-width: 1680px) {
-    /* .inner {
-    width: 720px;
-    width: 93.75%;
-
-    position: relative;
-  } */
-}
-
 /* 태블릿 디자인 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1680px) {
     .inner {
         width: 720px;
+        width: 93.75%;
     }
 
     #header nav {
@@ -703,27 +725,34 @@
     }
 
     .btn-menu {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url(../img/ico-menu.png) no-repeat 50%;
     }
 
+    .logo a {
+        width: 11rem;
+        height: 6.2rem;
+    }
     .gnb {
         display: none;
     }
 
-    .util-manu li {
+    .util-menu li {
         display: none;
     }
 
-    .util-manu li:nth-child(3) {
+    .util-menu li:nth-child(3) {
         display: block;
+        width: 3rem;
+        aspect-ratio: 1;
     }
 
     .visual figure {
         aspect-ratio: 1/1.231770833333333;
-    }
-
-    .visual .btn {
-        display: none;
     }
 
     .pro-menu {
@@ -874,6 +903,7 @@
     }
     .video-wrap {
         flex-direction: column-reverse;
+        gap: 4rem;
     }
 
     .brand-str {
@@ -890,12 +920,305 @@
         margin-top: 1.5rem;
     }
 
+    .video-con {
+        width: 100%;
+        height: 100%;
+    }
+
+    #footer {
+        border: none;
+        margin-top: 14.5rem;
+    }
+    #footer .inner {
+        /* display: block; */
+        display: flex;
+        flex-direction: column-reverse;
+
+        position: relative;
+    }
+
+    .foot-con1 {
+        width: 100%;
+        margin-top: 6rem;
+    }
+
+    .copyright {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 58rem;
+    }
+
+    .copyright p:nth-child(3)::before,
+    .copyright p:nth-child(5)::before {
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: var(--line-color);
+
+        vertical-align: middle;
+    }
+
+    .copyright p:last-child {
+        margin-top: 2.8rem;
+    }
+    .foot-con1 h2 {
+        display: none;
+    }
+    .foot-con1 p:nth-child(1),
+    .foot-con1 p:nth-child(5) a,
+    .foot-con1 p:nth-child(6) {
+        display: none;
+    }
+    .foot-con2 {
+        width: 100%;
+    }
+    .sns-list {
+        position: absolute;
+        top: 20rem;
+        right: 0;
+    }
+
+    .sns-list a {
+        width: 4.5rem;
+        aspect-ratio: 1;
+    }
+
+    .foot-list {
+        /* display: flex; */
+        flex-direction: column;
+        margin-top: 0;
+        /* width: 72rem; */
+        width: 100%;
+    }
+
+    .foot-list li {
+        height: 4rem;
+        border-bottom: 1px solid var(--line-color);
+        padding-top: 1rem;
+
+        position: relative;
+    }
+
+    .foot-list li::before {
+        content: "";
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url(../img/footer-arrow.png) no-repeat 50%;
+    }
+
+    .foot-list li:nth-child(1)::before {
+        position: absolute;
+        top: 0.8rem;
+        right: 0;
+    }
+    .foot-list li:nth-child(2)::before {
+        position: absolute;
+        top: 0.8rem;
+        right: 0;
+    }
+    .foot-list li:nth-child(3)::before {
+        position: absolute;
+        top: 0.8rem;
+        right: 0;
+    }
+    .foot-list dl dt {
+        font-size: 1.7rem;
+    }
+
+    .foot-list dl dd {
+        display: none;
+    }
+
+    .foot-list dl dt + dt {
+        display: none;
+    }
+
+    .quick-menu a:first-child {
+        display: none;
+        width: 4.5rem;
+        aspect-ratio: 1;
+    }
+}
+
+/*  .inner의 크기에 따른 분기점 */
+@media screen and (max-width: 620px) {
+    .inner {
+        width: 92.233%;
+    }
     .video-wrap {
-        gap: 4rem;
+        gap: 3rem;
     }
 
     .video-con {
-        width: 72rem;
-        height: 72rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual-slider .btn {
+        display: none;
+    }
+}
+/* 모바일 디자인 */
+@media screen and (max-width: 595px) {
+    .btn-menu {
+        width: 2rem;
+        height: 2rem;
+    }
+    .logo a {
+        width: 8.8rem;
+        height: 5rem;
+    }
+    #header nav {
+        height: 5.5rem;
+    }
+
+    .util-menu li:nth-child(3) {
+        width: 2rem;
+        aspect-ratio: 1;
+    }
+    .visual figure {
+        aspect-ratio: 1/1.359223300970874;
+    }
+
+    .pro-menu {
+        margin-top: 3rem;
+    }
+
+    .menu-list li a strong {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .best-pro {
+        margin-top: 7rem;
+    }
+
+    .product-title {
+        text-align: left;
+    }
+
+    .product-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .product-title p {
+        display: none;
+    }
+
+    .product-title::after {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .best-wrap {
+        gap: 3rem;
+    }
+    .best-list dl dt {
+        font-size: 1.2rem;
+    }
+
+    .best-list dl dd {
+        font-size: 1.2rem;
+    }
+
+    .new-pro {
+        margin-top: 7rem;
+    }
+
+    .new-wrap {
+        gap: 3rem;
+    }
+
+    .new-list dl dt {
+        font-size: 1.2rem;
+    }
+
+    .new-list dl dd {
+        font-size: 1.2rem;
+    }
+    .review {
+        margin-top: 7rem;
+    }
+
+    .review-title h2 {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+    .review-title p {
+        display: none;
+    }
+
+    .review-title a {
+        width: 3rem;
+        height: 3rem;
+    }
+    .review-list {
+        margin-top: 3rem;
+    }
+
+    .review-wrap .swiper-pagination {
+        top: 20rem;
+    }
+
+    /* .video {
+        margin-top: 7rem;
+    } */
+
+    .brand-str h2 {
+        font-size: 2rem;
+    }
+    .brand-str strong {
+        font-size: 3rem;
+    }
+    .brand-str p {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    #footer {
+        margin-top: 5rem;
+    }
+
+    .foot-con1 {
+        margin-top: 5rem;
+    }
+
+    .copyright {
+        width: 40rem;
+        font-size: 1.1rem;
+    }
+
+    .copyright p:nth-child(3)::before,
+    .copyright p:nth-child(5)::before {
+        width: 1.5px;
+        height: 9px;
+    }
+
+    .sns-list {
+        position: absolute;
+        top: 18rem;
+        right: 0;
+        gap: 1rem;
+    }
+
+    .sns-list a {
+        width: 3rem;
+        aspect-ratio: 1;
+    }
+
+    .foot-list li {
+        height: 3.5rem;
+    }
+
+    .foot-list dl dt {
+        font-size: 1.4rem;
+    }
+    .quick-menu {
+        width: 3rem;
+        /* aspect-ratio: 1; */
     }
 }
