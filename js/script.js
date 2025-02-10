@@ -6,11 +6,7 @@ const visualSlider = new Swiper('.visual-slider', {
     },
     speed: 1000,
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.visual-slider .btn-next',
-        prevEl: '.visual-slider .btn-prev',
-    },
+    // navigation: false,
 
     pagination: {
         el: '.visual-slider .swiper-pagination',
@@ -19,7 +15,11 @@ const visualSlider = new Swiper('.visual-slider', {
 
     breakpoints: {
         800: {
-            // navigation: false,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.visual-slider .btn-next',
+                prevEl: '.visual-slider .btn-prev',
+            },
         },
     },
 });
@@ -83,6 +83,11 @@ const reviewList = new Swiper('.review-list', {
     navigation: {
         nextEl: '.review .btn-next',
         prevEl: '.review .btn-prev',
+    },
+
+    pagination: {
+        el: '.review .swiper-pagination',
+        type: 'bullets',
     },
 
     pagination: {
