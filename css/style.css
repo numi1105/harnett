@@ -10,7 +10,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     border-bottom: 1px solid var(--line-color);
     position: fixed;
     background: #fff;
@@ -703,9 +703,9 @@ body {
     margin-top: 3.4rem;
 }
 
-.brand-str p + p {
+/* .brand-str p + p {
     display: none;
-}
+} */
 
 .brand-str a {
     transition: 0.4s;
@@ -1032,12 +1032,12 @@ body {
         margin-top: 1.5rem;
     }
 
-    .brand-str p {
+    /* .brand-str p {
         display: none;
-    }
-    .brand-str p + p {
+    } */
+    /* .brand-str p + p {
         display: block;
-    }
+    } */
 
     .brand-str a {
         display: none;
