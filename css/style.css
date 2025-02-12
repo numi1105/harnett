@@ -4,6 +4,7 @@ html,
 body {
     overflow-x: hidden;
 }
+
 #header {
     position: absolute;
     top: 0;
@@ -11,14 +12,12 @@ body {
     width: 100%;
     z-index: 10;
     border-bottom: 1px solid var(--line-color);
-
     position: fixed;
-
     background: #fff;
 }
 
 #header nav {
-    height: 8rem;
+    height: 9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,11 +38,6 @@ body {
     align-items: center;
     vertical-align: middle;
 }
-/* .logo a img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
 
 .gnb {
     display: flex;
@@ -51,17 +45,56 @@ body {
     /* background: red; */
 }
 
-.gnb li a {
-    display: block;
+.gnb > li {
+    position: relative;
+
+    /* background: #ff5; */
+}
+.gnb > li > a {
+    /* border: 1px solid #000; */
+    display: inline-block;
+    width: 15rem;
     font-size: 2.3rem;
     color: var(--main-color);
+    text-align: center;
 
     transition: 0.4s;
 }
 
-.gnb li a:hover {
-    color: var(--main-color);
-    border-bottom: 1px solid var(--main-color);
+.gnb > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--main-color);
+    transition: width 0.4s;
+}
+
+.gnb > li > a:hover::after {
+    width: 90%;
+}
+
+.submenu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: var(--main-color);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 0;
+
+    display: none;
+}
+
+.submenu li a {
+    /* border: 1px solid #000; */
+    padding: 10px;
+    text-align: center;
+    display: block;
+    color: #fff;
 }
 
 .util-menu {
@@ -76,7 +109,7 @@ body {
     width: 100%;
     position: relative;
 
-    display: none;
+    /* display: none; */
 }
 
 .visual figure {
@@ -125,7 +158,7 @@ body {
     width: 23rem;
     width: 13.6905%;
     /* height: 29rem; */
-    aspect-ratio: 1/1.32;
+    aspect-ratio: 1/1.4;
     text-align: center;
 
     position: relative;
@@ -173,12 +206,15 @@ body {
 .menu-list li a strong {
     display: block;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--main-color);
 }
 
 .best-pro {
-    margin-top: 20rem;
+    background: rgba(117, 117, 117, 0.1);
+    margin-top: 10rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
     position: relative;
 }
 
@@ -189,9 +225,33 @@ body {
 
 .product-title {
     width: 36.5rem;
+    /* padding: 5rem 0; */
 }
 .product-title p {
     margin-top: 2rem;
+}
+
+.product-title a {
+    transition: 0.4s;
+}
+
+.product-title a::after {
+    content: "";
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../img/jam_plus.png) no-repeat 50%;
+
+    transition: 0.4s;
+}
+
+.product-title a:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.product-title a:hover::after {
+    background: url(../img/jam_plus-1.png);
 }
 
 .best-list {
@@ -205,7 +265,7 @@ body {
 
 .best-next {
     position: absolute;
-    top: 17.7rem;
+    top: 27.7rem;
     right: 6.1rem;
 }
 
@@ -361,7 +421,7 @@ body {
 }
 
 .new-pro {
-    margin-top: 20rem;
+    margin-top: 10rem;
     position: relative;
 }
 
@@ -452,7 +512,10 @@ body {
 }
 
 .review {
-    margin-top: 20rem;
+    background: rgba(117, 117, 117, 0.1);
+    margin-top: 10rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
     position: relative;
 }
 
@@ -491,7 +554,7 @@ body {
 }
 
 .review-title a::after {
-    content: '';
+    content: "";
     display: block;
     width: 2.4rem;
     height: 2.4rem;
@@ -557,7 +620,7 @@ body {
 .review-con {
     width: 32rem;
     aspect-ratio: 1;
-    border-radius: var(--rds-4);
+    border-radius: var(--rds-2);
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -586,13 +649,13 @@ body {
 
 .review .btn-prev {
     position: absolute;
-    top: 36.6rem;
+    top: 45rem;
     left: 6.1rem;
 }
 
 .review .btn-next {
     position: absolute;
-    top: 36.6rem;
+    top: 45rem;
     right: 6.1rem;
 }
 .video {
@@ -637,6 +700,33 @@ body {
 
 .brand-str p {
     margin-top: 3.4rem;
+}
+
+.brand-str p + p {
+    display: none;
+}
+
+.brand-str a {
+    transition: 0.4s;
+}
+
+.brand-str a::after {
+    content: "";
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../img/jam_plus.png) no-repeat 50%;
+
+    transition: 0.4s;
+}
+
+.brand-str a:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.brand-str a:hover::after {
+    background: url(../img/jam_plus-1.png);
 }
 
 #footer {
@@ -713,7 +803,7 @@ body {
 
     position: fixed;
     bottom: 2.5rem;
-    right: 2.5rem;
+    right: 2rem;
     z-index: 10;
 }
 
@@ -728,6 +818,10 @@ body {
 
     #header nav {
         height: 6rem;
+    }
+
+    .visual .btn {
+        opacity: 0;
     }
 
     .btn-menu {
@@ -769,7 +863,7 @@ body {
         font-size: 1.8rem;
         /* width: 11rem; */
         /* height: 15.4rem; */
-        margin-top: 1.4rem;
+        /* margin-top: 1.4rem; */
     }
 
     .best-pro {
@@ -796,12 +890,12 @@ body {
         margin-top: 0;
     }
 
-    .btn-more {
+    .product-title a {
         display: none;
     }
 
     .product-title::after {
-        content: '';
+        content: "";
         display: block;
         width: 5rem;
         height: 5rem;
@@ -845,6 +939,10 @@ body {
         font-size: 1.8rem;
     }
 
+    .util1-menu {
+        display: none;
+    }
+
     .new-pro {
         margin-top: 9rem;
     }
@@ -876,20 +974,24 @@ body {
         display: none;
     }
 
-    .review {
-        margin-top: 9rem;
-    }
-
-    .review button {
-        display: none;
-    }
-
     .new-list dl dt {
         font-size: 1.8rem;
     }
 
     .new-list dl dd {
         font-size: 1.8rem;
+    }
+
+    .util2-menu {
+        display: none;
+    }
+
+    .review {
+        margin-top: 9rem;
+    }
+
+    .review button {
+        display: none;
     }
 
     .review-title h2 {
@@ -905,7 +1007,10 @@ body {
     }
 
     .video {
-        margin-top: 9rem;
+        margin-top: 10rem;
+    }
+    .video .inner {
+        position: relative;
     }
     .video-wrap {
         flex-direction: column-reverse;
@@ -924,6 +1029,31 @@ body {
     .brand-str p {
         font-size: 1.7rem;
         margin-top: 1.5rem;
+    }
+
+    .brand-str p {
+        display: none;
+    }
+    .brand-str p + p {
+        display: block;
+    }
+
+    .brand-str a {
+        display: none;
+    }
+
+    .brand-str::after {
+        content: "";
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid var(--line-color);
+        border-radius: 50%;
+        background: url(../img/jam_plus.png) no-repeat 50%;
+
+        position: absolute;
+        top: 18rem;
+        right: 0;
     }
 
     .video-con {
@@ -948,6 +1078,12 @@ body {
         margin-top: 6rem;
     }
 
+    .foot-logo {
+        display: block;
+        width: 12rem;
+        width: 16.6667%;
+    }
+
     .copyright {
         display: flex;
         flex-wrap: wrap;
@@ -957,7 +1093,7 @@ body {
 
     .copyright p:nth-child(3)::before,
     .copyright p:nth-child(5)::before {
-        content: '';
+        content: "";
         display: inline-block;
         width: 2px;
         height: 12px;
@@ -988,7 +1124,7 @@ body {
     }
 
     .sns-list a {
-        width: 4.5rem;
+        width: 4rem;
         aspect-ratio: 1;
     }
 
@@ -1009,7 +1145,7 @@ body {
     }
 
     .foot-list li::before {
-        content: '';
+        content: "";
         display: block;
         width: 2.4rem;
         height: 2.4rem;
@@ -1045,7 +1181,11 @@ body {
 
     .quick-menu a:first-child {
         display: none;
-        width: 4.5rem;
+        width: 4rem;
+        aspect-ratio: 1;
+    }
+    .quick-menu a:last-child {
+        width: 4rem;
         aspect-ratio: 1;
     }
 }
@@ -1094,11 +1234,12 @@ body {
 
     .menu-list li a strong {
         font-size: 1.2rem;
-        margin-top: 1rem;
     }
 
     .best-pro {
-        margin-top: 7rem;
+        margin-top: 5rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
     .product-title {
@@ -1130,7 +1271,7 @@ body {
     }
 
     .new-pro {
-        margin-top: 7rem;
+        margin-top: 5rem;
     }
 
     .new-wrap {
@@ -1145,7 +1286,9 @@ body {
         font-size: 1.2rem;
     }
     .review {
-        margin-top: 7rem;
+        margin-top: 5rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
     .review-title h2 {
@@ -1168,9 +1311,9 @@ body {
         top: 20rem;
     }
 
-    /* .video {
-        margin-top: 7rem;
-    } */
+    .video {
+        margin-top: 5rem;
+    }
 
     .brand-str h2 {
         font-size: 2rem;
@@ -1179,8 +1322,14 @@ body {
         font-size: 3rem;
     }
     .brand-str p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-top: 1.5rem;
+    }
+
+    .brand-str::after {
+        width: 3rem;
+        height: 3rem;
+        top: 13.7rem;
     }
 
     #footer {
@@ -1204,7 +1353,7 @@ body {
 
     .sns-list {
         position: absolute;
-        top: 18rem;
+        top: 15rem;
         right: 0;
         gap: 1rem;
     }
@@ -1221,8 +1370,11 @@ body {
     .foot-list dl dt {
         font-size: 1.4rem;
     }
-    .quick-menu {
+    /* .quick-menu {
         width: 3rem;
-        /* aspect-ratio: 1; */
+    } */
+
+    .quick-menu a:last-child {
+        width: 3rem;
     }
 }
