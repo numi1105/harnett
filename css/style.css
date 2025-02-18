@@ -145,6 +145,10 @@ body {
     right: 12rem;
 }
 
+span.swiper-pagination-bullet {
+    background-color: var(--main-color);
+}
+
 .pro-menu {
     margin-top: 10rem;
 }
@@ -621,7 +625,7 @@ body {
 .review-con {
     width: 32rem;
     aspect-ratio: 1;
-    border-radius: var(--rds-2);
+    border-radius: var(--rds-4);
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -659,6 +663,7 @@ body {
     top: 45rem;
     right: 6.1rem;
 }
+
 .video {
     margin-top: 20rem;
 }
@@ -703,10 +708,6 @@ body {
     margin-top: 3.4rem;
 }
 
-/* .brand-str p + p {
-    display: none;
-} */
-
 .brand-str a {
     transition: 0.4s;
 }
@@ -732,7 +733,7 @@ body {
 
 #footer {
     border-top: 1px solid var(--line-color);
-    margin-top: 20rem;
+    margin: 20rem 0 5rem;
     padding: 5rem 0;
 }
 
@@ -761,10 +762,16 @@ body {
     margin-top: 1rem;
 }
 
+.copyright-con a {
+    font-weight: 500;
+}
+
 .foot-con2 {
     width: 100.4rem;
     width: 59.7619%;
     /* border: 1px solid #000; */
+
+    position: relative;
 }
 
 .sns-list {
@@ -772,12 +779,16 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 1.7rem;
+
+    position: absolute;
+    top: 1rem;
+    right: 0;
 }
 
 .foot-list {
     display: flex;
     justify-content: space-between;
-    margin-top: 11.6rem;
+    margin-top: 17.5rem;
 }
 
 .foot-list dl dt {
@@ -786,9 +797,10 @@ body {
     color: #000;
 }
 
-.foot-list dl dt + dt {
+.foot-list dl dd strong {
     font-weight: 500;
     font-size: 3.4rem;
+    color: #000;
 }
 
 .foot-list dl dd {
@@ -803,14 +815,81 @@ body {
     gap: 1rem;
 
     position: fixed;
-    bottom: 2.5rem;
+    bottom: 3.5rem;
     right: 2rem;
     z-index: 10;
 }
 
-/*  .inner의 크기에 따른 분기점 */
+.dim {
+    position: fixed;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.7);
 
-/* 태블릿 디자인 */
+    display: none;
+    z-index: 1000;
+}
+.popup {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(200deg);
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 20px;
+
+    width: 600px;
+    /* height: 300px;*/
+    aspect-ratio: 4/2.5;
+    padding: 3vw;
+
+    /* css 방식의 팝업 */
+    opacity: 0;
+    /* transition: 0.8s cubic-bezier(0, 0, 0.02, 1.53); */
+    transition: 0.8s;
+
+    pointer-events: none;
+    user-select: none;
+
+    z-index: 2000;
+    /* 팝업 글자 정렬 5종 세트 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.popup h2 {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.popup p {
+    /* margin: 1rem auto; */
+}
+.popup p strong {
+    color: red;
+}
+
+.popup button:hover {
+    color: var(--main-color);
+}
+
+.popup.active {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    opacity: 1;
+    pointer-events: initial;
+    user-select: initial;
+}
+
+.menu-wrap {
+    display: none;
+}
+
+/*  태블릿 디자인  */
+
 @media screen and (max-width: 1680px) {
     .inner {
         width: 720px;
@@ -832,6 +911,7 @@ body {
         width: 2.5rem;
         height: 2.5rem;
         background: url(../img/ico-menu.png) no-repeat 50%;
+        cursor: pointer;
     }
 
     .logo a {
@@ -932,6 +1012,9 @@ body {
         display: none;
     }
 
+    .best-list dl {
+        margin-top: 1.5rem;
+    }
     .best-list dl dt {
         font-size: 1.8rem;
     }
@@ -1007,6 +1090,29 @@ body {
         margin-top: 4rem;
     }
 
+    .review-con:hover {
+        opacity: 0;
+    }
+
+    .review-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+        border: 10px solid #fff;
+        background: #fff;
+        transition: 0.4s;
+
+        /* 마우스와 상관없게, 사용자에게도 선택되지 않게 */
+        pointer-events: none;
+        user-select: none;
+
+        /* width를 주지 않았음 */
+        /* width: 400px;
+        height: 500px; */
+    }
+
     .video {
         margin-top: 10rem;
     }
@@ -1031,13 +1137,6 @@ body {
         font-size: 1.7rem;
         margin-top: 1.5rem;
     }
-
-    /* .brand-str p {
-        display: none;
-    } */
-    /* .brand-str p + p {
-        display: block;
-    } */
 
     .brand-str a {
         display: none;
@@ -1064,7 +1163,7 @@ body {
 
     #footer {
         border: none;
-        margin-top: 14.5rem;
+        margin-top: 10rem;
     }
     #footer .inner {
         /* display: block; */
@@ -1076,7 +1175,7 @@ body {
 
     .foot-con1 {
         width: 100%;
-        margin-top: 6rem;
+        margin-top: 1rem;
     }
 
     .foot-logo {
@@ -1088,40 +1187,45 @@ body {
     .copyright {
         display: flex;
         flex-wrap: wrap;
-
-        width: 58rem;
+        position: relative;
+        width: 100rem;
+        /* width: 63.4921%; */
     }
 
     .copyright p:nth-child(3)::before,
-    .copyright p:nth-child(5)::before {
+    .copyright p:nth-child(4)::before,
+    .copyright p:nth-child(6)::before {
         content: "";
         display: inline-block;
         width: 2px;
         height: 12px;
         margin: 0 5px;
         background-color: var(--line-color);
-
+        font-size: 3rem;
         vertical-align: middle;
     }
 
-    .copyright p:last-child {
-        margin-top: 2.8rem;
+    .copyright p:first-child {
+        display: none;
+    }
+
+    .copyright-con {
+        position: absolute;
+        top: 9rem;
+        left: 0;
     }
     .foot-con1 h2 {
         display: none;
     }
-    .foot-con1 p:nth-child(1),
-    .foot-con1 p:nth-child(5) a,
-    .foot-con1 p:nth-child(6) {
-        display: none;
-    }
+
     .foot-con2 {
         width: 100%;
     }
     .sns-list {
-        position: absolute;
-        top: 20rem;
-        right: 0;
+        margin-top: 2rem;
+        gap: 1rem;
+
+        position: inherit;
     }
 
     .sns-list a {
@@ -1130,54 +1234,63 @@ body {
     }
 
     .foot-list {
-        /* display: flex; */
         flex-direction: column;
-        margin-top: 0;
-        /* width: 72rem; */
         width: 100%;
+        margin-top: 0;
     }
 
     .foot-list li {
-        height: 4rem;
         border-bottom: 1px solid var(--line-color);
-        padding-top: 1rem;
+        padding: 1rem;
+        cursor: pointer;
+    }
 
+    .foot-list li dl {
         position: relative;
     }
-
-    .foot-list li::before {
+    .foot-list li dl dt::after {
         content: "";
         display: block;
-        width: 2.4rem;
-        height: 2.4rem;
-        background: url(../img/footer-arrow.png) no-repeat 50%;
+        width: 1.3rem;
+        height: 1.3rem;
+        border: solid #000;
+        border-width: 3px 3px 0 0;
+
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        transform: translateY(-50%) rotate(135deg);
+
+        transition: 0.3s;
     }
 
-    .foot-list li:nth-child(1)::before {
-        position: absolute;
-        top: 0.8rem;
-        right: 0;
-    }
-    .foot-list li:nth-child(2)::before {
-        position: absolute;
-        top: 0.8rem;
-        right: 0;
-    }
-    .foot-list li:nth-child(3)::before {
-        position: absolute;
-        top: 0.8rem;
-        right: 0;
-    }
-    .foot-list dl dt {
+    .foot-list li dl dt {
         font-size: 1.7rem;
     }
 
-    .foot-list dl dd {
-        display: none;
+    .foot-list li dl dd {
+        font-size: 1.7rem;
     }
 
-    .foot-list dl dt + dt {
+    .foot-list dl dd strong {
+        font-size: 2.8rem;
+    }
+
+    .notice-wrap {
         display: none;
+        padding: 2rem;
+        background: #f5f5f5;
+    }
+
+    /* 효과 */
+
+    .foot-list li.active dl dt {
+        color: var(--main-color);
+    }
+
+    .foot-list li.active dl dt::after {
+        transform: translateY(-50%) rotate(315deg);
+        border-color: var(--main-color);
     }
 
     .quick-menu a:first-child {
@@ -1191,8 +1304,67 @@ body {
     }
 }
 
+/* 중간분기점 */
+@media screen and (max-width: 930px) {
+    .copyright {
+        width: 80rem;
+    }
+
+    .copyright p:nth-child(5)::before {
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: var(--line-color);
+        font-size: 3rem;
+        vertical-align: middle;
+    }
+
+    .copyright p:nth-child(4)::before,
+    .copyright p:nth-child(6)::before {
+        display: none;
+    }
+}
+
+/* 중간분기점 */
+@media screen and (max-width: 768px) {
+    /* .copyright p:nth-child(5)::before {
+        display: none;
+    } */
+
+    .popup {
+        width: 40rem;
+    }
+
+    .popup h2 {
+        font-size: 2rem;
+    }
+
+    .popup p {
+        font-size: 1.7rem;
+    }
+
+    .popup button {
+        font-size: 1.7rem;
+    }
+    .copyright {
+        width: 50rem;
+        width: 69.4444%;
+    }
+
+    .copyright-con {
+        top: 15rem;
+    }
+
+    .copyright p:nth-child(3)::before,
+    .copyright p:nth-child(5)::before {
+        display: none;
+    }
+}
+
 /* 모바일 디자인 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
     .inner {
         width: 92.233%;
     }
@@ -1338,24 +1510,18 @@ body {
     }
 
     .foot-con1 {
-        margin-top: 5rem;
+        margin-top: 1rem;
     }
 
     .copyright {
-        width: 40rem;
-        font-size: 1.1rem;
-    }
-
-    .copyright p:nth-child(3)::before,
-    .copyright p:nth-child(5)::before {
-        width: 1.5px;
-        height: 9px;
+        /* width: 35rem; */
+        font-size: 1.3rem;
     }
 
     .sns-list {
-        position: absolute;
-        top: 15rem;
-        right: 0;
+        /* position: absolute; */
+        /* top: 15rem; */
+        /* right: 0; */
         gap: 1rem;
     }
 
@@ -1365,17 +1531,44 @@ body {
     }
 
     .foot-list li {
-        height: 3.5rem;
+        padding: 0.5rem;
     }
 
-    .foot-list dl dt {
+    .foot-list li dl dt::after {
+        width: 1rem;
+        height: 1rem;
+    }
+    .foot-list li dl dt {
         font-size: 1.4rem;
     }
-    /* .quick-menu {
-        width: 3rem;
-    } */
+
+    .foot-list li dl dd {
+        font-size: 1.4rem;
+    }
+
+    .foot-list dl dd strong {
+        font-size: 2rem;
+    }
+    .notice-wrap {
+        padding: 1rem;
+    }
 
     .quick-menu a:last-child {
         width: 3rem;
+    }
+
+    .popup {
+        width: 30rem;
+    }
+    .popup h2 {
+        font-size: 1.5rem;
+    }
+
+    .popup p {
+        font-size: 1.3rem;
+    }
+
+    .popup button {
+        font-size: 1.3rem;
     }
 }

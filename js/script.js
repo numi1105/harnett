@@ -1,10 +1,9 @@
 $(function () {
-    const $window = $(window);
-    const $header = $("header");
     const $subMenu = $(".submenu");
     const $menu = $(".gnb > li");
     const duration = 250; // 0.25초
-    // console.log($menu);
+    const $footL = $(".foot-list li");
+    const $footN = $(".notice-wrap");
 
     // 메뉴영역에 마우스가 들어오면 (event:mouseenter)
     $menu.on("mouseenter", function () {
@@ -18,6 +17,14 @@ $(function () {
         // submenu 찾아서 슬라이드 업
         $subMenu.stop().slideUp(duration);
         $menu.removeClass("on");
+    });
+
+    $footL.on("click", function () {
+        $(this).siblings().find($footN).stop().slideUp(duration);
+        $(this).find($footN).stop().slideToggle(duration);
+
+        $(this).siblings().removeClass("active");
+        $(this).toggleClass("active");
     });
 
     const visualSlider = new Swiper(".visual-slider", {
@@ -127,4 +134,38 @@ $(function () {
     });
 
     //AOS.init();
+
+    // 대상을 변수에 저장
+    const $popup = $(".popup");
+    const $btnClose = $(".btn-close");
+    const $dim = $(".dim");
+
+    showPopup();
+
+    // 링크를 클릭하면 팝업이 뜬다.
+    $(".copyright")
+        .find(".copyright-con")
+        .on("click", (e) => {
+            e.preventDefault();
+
+            showPopup();
+        });
+
+    // 닫기 버튼을 클릭하면 팝업이 닫힌다.
+    $btnClose.on("click", hidePopup);
+
+    // 3초 후에 닫히게
+    //setTimeout(동작, 시간)
+    setTimeout(hidePopup, 3000);
+
+    // 공통의 동작을 함수로 정의
+    function showPopup() {
+        $dim.fadeIn();
+        $popup.addClass("active");
+    }
+
+    function hidePopup() {
+        $popup.removeClass("active");
+        $dim.fadeOut();
+    }
 });

@@ -12,14 +12,12 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/style.css" />
 
-        <script src="./js/jquery-3.7.1.min.js"></script>
-
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
-
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./js/jquery-3.7.1.min.js"></script>
         <script src="./js/script.js"></script>
     </head>
     <body>
@@ -1307,13 +1305,6 @@
                                 가장 사랑하는 장소를 꾸미는 여정에서 하네트와
                                 함께하시길 바랍니다.
                             </p>
-                            <!-- <p>
-                                하네트의 가구는 단순히 기능을 넘어서,<br />
-                                품격과 예술을 담아내는 작품입니다. <br />천연
-                                소재의 따뜻한 감촉, 섬세하게 다듬어진 디자인,
-                                <br />
-                                정교한 장인의 손길로 느껴보세요.
-                            </p> -->
                             <a
                                 href="#"
                                 class="btn-more"
@@ -1353,12 +1344,57 @@
                                 <a href="#">[사업자정보확인]</a>
                             </p>
                             <p>비즈니스 라이선스: 316-13-01597</p>
-                            <p>© HARNETT. All Rights Reserved.</p>
+                            <p class="copyright-con">
+                                © HARNETT. All Rights Reserved.
+                                <a href="#" class="popup-trigger">ⓘ 안내</a>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="foot-con2">
+                    <ul class="foot-list">
+                        <li>
+                            <dl>
+                                <!-- 삭제 -->
+                                <dt>INFO</dt>
+                                <!-- strong -->
+                                <div class="notice-wrap">
+                                    <!-- ul -->
+                                    <dd><a href="#">이용안내</a></dd>
+                                    <!-- li > a-->
+                                    <dd><a href="#">개인정보처리방침</a></dd>
+                                    <dd><a href="#">이용약관</a></dd>
+                                </div>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>CS CENTER</dt>
+                                <div class="notice-wrap">
+                                    <dd><strong>1644-2615</strong></dd>
+                                    <dd>
+                                        상담시간:10:00 - 17:00 (점심 12:30 -
+                                        13:30)
+                                    </dd>
+                                    <dd>메일: cs@harnett.co.kr</dd>
+                                    <dd>주말 및 공휴일은 휴뮤</dd>
+                                    <dd>신한은행 110-519-260345</dd>
+                                </div>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>COMMUNITY</dt>
+                                <div class="notice-wrap">
+                                    <dd><a href="#">공지사항</a></dd>
+                                    <dd><a href="#">Q&A</a></dd>
+                                    <dd><a href="#">FAQ</a></dd>
+                                    <dd><a href="#">A/S</a></dd>
+                                </div>
+                            </dl>
+                        </li>
+                    </ul>
                     <div class="sns-list">
                         <a href="#"
                             ><img src="./img/sns-ins.png" alt="인스타그램"
@@ -1367,37 +1403,6 @@
                             ><img src="./img/sns-you.png" alt="유튜브"
                         /></a>
                     </div>
-                    <ul class="foot-list">
-                        <li>
-                            <dl>
-                                <dt>INFO</dt>
-                                <dd><a href="#">이용안내</a></dd>
-                                <dd><a href="#">개인정보처리방침</a></dd>
-                                <dd><a href="#">이용약관</a></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl>
-                                <dt>CS CENTER</dt>
-                                <dt>1644-2615</dt>
-                                <dd>
-                                    상담시간:10:00 - 17:00 (점심 12:30 - 13:30)
-                                </dd>
-                                <dd>메일: cs@harnett.co.kr</dd>
-                                <dd>주말 및 공휴일은 휴뮤</dd>
-                                <dd>신한은행 110-519-260345</dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl>
-                                <dt>COMMUNITY</dt>
-                                <dd><a href="#">공지사항</a></dd>
-                                <dd><a href="#">Q&A</a></dd>
-                                <dd><a href="#">FAQ</a></dd>
-                                <dd><a href="#">A/S</a></dd>
-                            </dl>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </footer>
@@ -1407,5 +1412,18 @@
             <a href="#"><img src="./img/icon-cart.png" alt="장바구니" /></a>
             <a href="#"><img src="./img/icon-top.png" alt="top" /></a>
         </aside>
+
+        <!-- popup -->
+        <div class="dim"></div>
+        <div class="popup">
+            <h2>📌 학습 목적 안내</h2>
+            <p>
+                이 웹사이트 디자인은
+                <strong>[학습 목적으로 제작]</strong>되었습니다. 상업적 용도로
+                사용되지 않으며, 디자인 실습 프로젝트의 일환입니다.
+            </p>
+            <!-- button:button.btn-close{닫기} -->
+            <button type="button" class="btn-close">닫기</button>
+        </div>
     </body>
 </html>
